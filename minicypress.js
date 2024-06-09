@@ -132,8 +132,8 @@ class MiniCypress {
 }
 
 // Exporting the CypressFork class to be used in other scripts if needed.
-const cy = new MiniCypress();
-const tests = {}
+window.cy = new MiniCypress();
+window.tests = {}
 
 function it(test_title, function_object) {
     tests[test_title] = function_object
@@ -155,3 +155,6 @@ function run_tests(tests) {
     return failedTestsCount === 0;
 
 }
+
+window.it = it
+window.run_tests = run_tests
