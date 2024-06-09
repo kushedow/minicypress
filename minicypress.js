@@ -139,12 +139,12 @@ function it(test_title, function_object) {
     testsCypress[test_title] = function_object
 }
 
-function runTests(tests) {
+function runTests() {
     let failedTestsCount = 0;
 
-    for (const testName in tests) {
+    for (const testName in testsCypress) {
         try {
-            tests[testName]();
+            testsCypress[testName]();
             console.log(`${testName} passed`);
         } catch (error) {
             console.log(`${testName} failed`, error);
