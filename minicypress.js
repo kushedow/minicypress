@@ -132,11 +132,11 @@ class MiniCypress {
 }
 
 // Exporting the CypressFork class to be used in other scripts if needed.
-window.cy = new MiniCypress();
-window.tests = {}
+cy = new MiniCypress();
+testsCypress = {}
 
 function it(test_title, function_object) {
-    tests[test_title] = function_object
+    testsCypress[test_title] = function_object
 }
 
 function run_tests(tests) {
@@ -156,5 +156,4 @@ function run_tests(tests) {
 
 }
 
-window.it = it
-window.run_tests = run_tests
+
