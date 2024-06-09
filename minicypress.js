@@ -4,7 +4,7 @@ class MiniCypress {
     }
 
     get(selector) {
-        this.el = document.querySelector(selector);
+        this.el = dom.querySelector(selector);
         return this;
     }
 
