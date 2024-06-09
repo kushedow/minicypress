@@ -139,21 +139,19 @@ function it(test_title, function_object) {
     testsCypress[test_title] = function_object
 }
 
-function run_tests(tests) {
+function runTests(tests) {
+    let failedTestsCount = 0;
 
-    let failedTestsCount = 0
-
-    for (const function_object of Object.values(tests)) {
+    for (const testName in tests) {
         try {
-            function_object();
-            console.log("passed")
+            tests[testName]();
+            console.log(`${testName} passed`);
         } catch (error) {
-            console.log("failed", error);
-            failedTestsCount++
+            console.log(`${testName} failed`, error);
+            failedTestsCount++;
         }
     }
+
     return failedTestsCount === 0;
-
 }
-
 
